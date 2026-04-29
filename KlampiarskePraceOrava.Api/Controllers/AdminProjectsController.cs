@@ -54,7 +54,7 @@ public class AdminProjectsController(AppDbContext db) : ControllerBase
             Title = dto.Title,
             Description = dto.Description,
             Category = dto.Category,
-            IsPublished = false,
+            IsPublished = true,
             CreatedAt = DateTime.UtcNow
         };
 

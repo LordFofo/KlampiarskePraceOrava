@@ -11,7 +11,7 @@ export default function ProjectForm() {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [category, setCategory] = useState(CATEGORIES[0])
-  const [isPublished, setIsPublished] = useState(false)
+  const [isPublished, setIsPublished] = useState(true)
   const [detail, setDetail] = useState<ProjectDetail | null>(null)
   const [saving, setSaving] = useState(false)
   const [saved, setSaved] = useState(false)
@@ -21,7 +21,7 @@ export default function ProjectForm() {
   const [savedTitle, setSavedTitle] = useState('')
   const [savedDescription, setSavedDescription] = useState('')
   const [savedCategory, setSavedCategory] = useState(CATEGORIES[0])
-  const [savedIsPublished, setSavedIsPublished] = useState(false)
+  const [savedIsPublished, setSavedIsPublished] = useState(true)
 
   const imgRef = useRef<HTMLInputElement>(null)
   const vidRef = useRef<HTMLInputElement>(null)

@@ -60,6 +60,7 @@ export default function Projects() {
                   src={`/api/projects/images/${p.coverImageId}`}
                   alt={p.title}
                   className="w-full h-52 object-cover"
+                  loading="lazy"
                 />
               ) : (
                 <div className="w-full h-52 bg-gray-100 flex items-center justify-center text-gray-300">
@@ -131,6 +132,7 @@ function ProjectModal({ projectId, onClose }: { projectId: number; onClose: () =
               src={`/api/projects/images/${detail.images[imgIndex].id}`}
               alt=""
               className="w-full h-72 object-cover rounded-t-2xl"
+              loading="lazy"
             />
             {detail.images.length > 1 && (
               <>

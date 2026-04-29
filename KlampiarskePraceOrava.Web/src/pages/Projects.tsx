@@ -52,7 +52,7 @@ export default function Projects() {
           {projects.map((p) => (
             <div
               key={p.id}
-              className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow cursor-pointer"
+              className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md hover:scale-[1.02] transition-all duration-200 cursor-pointer"
               onClick={() => setSelected(p)}
             >
               {p.coverImageId ? (

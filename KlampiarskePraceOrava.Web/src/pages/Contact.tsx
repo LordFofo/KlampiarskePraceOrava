@@ -1,8 +1,8 @@
-import { ExternalLink, User } from 'lucide-react'
+import { ExternalLink, Phone, User } from 'lucide-react'
 
 const contacts = [
-  { name: 'Tomáš Babčeka' },
-  { name: 'Peter Romaňák' },
+  { name: 'Tomáš Babčeka', phone: '+421 XXX XXX XXX' },
+  { name: 'Peter Romaňák', phone: '+421 XXX XXX XXX' },
 ]
 
 export default function Contact() {
@@ -10,15 +10,24 @@ export default function Contact() {
     <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-16">
       <div className="bg-white rounded-2xl shadow-sm p-10 max-w-md w-full text-center">
         <h1 className="text-3xl font-bold text-gray-800 mb-2">Kontakt</h1>
-        <p className="text-gray-500 mb-8">Nájdite nás na Facebooku alebo nás kontaktujte priamo.</p>
+        <p className="text-gray-500 mb-8">Zavolajte nám alebo nás nájdite na Facebooku.</p>
 
         <div className="flex flex-col gap-3 mb-6">
           {contacts.map((c) => (
-            <div key={c.name} className="flex items-center gap-3 bg-gray-50 rounded-xl px-5 py-4">
-              <div className="bg-orange-100 text-orange-500 rounded-full p-2">
-                <User size={18} />
+            <div key={c.name} className="bg-gray-50 rounded-xl px-5 py-4 text-left">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="bg-orange-100 text-orange-500 rounded-full p-2">
+                  <User size={18} />
+                </div>
+                <span className="font-semibold text-gray-800">{c.name}</span>
               </div>
-              <span className="font-medium text-gray-800">{c.name}</span>
+              <a
+                href={`tel:${c.phone.replace(/\s/g, '')}`}
+                className="flex items-center gap-2 text-orange-500 hover:text-orange-600 font-medium ml-11 transition-colors"
+              >
+                <Phone size={15} />
+                {c.phone}
+              </a>
             </div>
           ))}
         </div>

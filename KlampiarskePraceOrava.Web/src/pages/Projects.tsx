@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Wrench } from 'lucide-react'
 import api, { type ProjectList, CATEGORIES } from '../services/api'
 
@@ -93,12 +93,27 @@ export default function Projects() {
 function ProjectModal({ projectId, onClose }: { projectId: number; onClose: () => void }) {
   const [detail, setDetail] = useState<import('../services/api').ProjectDetail | null>(null)
   const [imgIndex, setImgIndex] = useState(0)
+  const touchStartX = useRef<number | null>(null)
 
   useEffect(() => {
     api.get(`/projects/${projectId}`).then((r) => setDetail(r.data))
   }, [projectId])
 
   if (!detail) return null
+
+  const prev = () => setImgIndex(i => (i - 1 + detail.images.length) % detail.images.length)
+  const next = () => setImgIndex(i => (i + 1) % detail.images.length)
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX
+  }
+
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return
+    const diff = touchStartX.current - e.changedTouches[0].clientX
+    if (Math.abs(diff) > 50) diff > 0 ? next() : prev()
+    touchStartX.current = null
+  }
 
   return (
     <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4" onClick={onClose}>
@@ -107,22 +122,38 @@ function ProjectModal({ projectId, onClose }: { projectId: number; onClose: () =
         onClick={(e) => e.stopPropagation()}
       >
         {detail.images.length > 0 && (
-          <div className="relative">
+          <div
+            className="relative select-none"
+            onTouchStart={onTouchStart}
+            onTouchEnd={onTouchEnd}
+          >
             <img
               src={`/api/projects/images/${detail.images[imgIndex].id}`}
               alt=""
               className="w-full h-72 object-cover rounded-t-2xl"
             />
             {detail.images.length > 1 && (
-              <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
-                {detail.images.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setImgIndex(i)}
-                    className={`w-2 h-2 rounded-full transition-colors ${i === imgIndex ? 'bg-white' : 'bg-white/50'}`}
-                  />
-                ))}
-              </div>
+              <>
+                {/* Šípky (desktop) */}
+                <button
+                  onClick={prev}
+                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-full w-8 h-8 flex items-center justify-center hidden md:flex"
+                >‹</button>
+                <button
+                  onClick={next}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-full w-8 h-8 flex items-center justify-center hidden md:flex"
+                >›</button>
+                {/* Bodky */}
+                <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
+                  {detail.images.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setImgIndex(i)}
+                      className={`w-2 h-2 rounded-full transition-colors ${i === imgIndex ? 'bg-white' : 'bg-white/50'}`}
+                    />
+                  ))}
+                </div>
+              </>
             )}
           </div>
         )}

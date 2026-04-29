@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <IsPublishable>false</IsPublishable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
+  </PropertyGroup>
+
+  <!-- Súbory viditeľné v Solution Explorer -->
+  <ItemGroup>
+    <None Include="package.json" />
+    <None Include="vite.config.ts" />
+    <None Include="index.html" />
+    <None Include="tsconfig.json" />
+    <None Include="tsconfig.app.json" />
+    <None Include="tsconfig.node.json" />
+    <None Include="src\**\*" />
+  </ItemGroup>
+
+  <Target Name="NpmInstall" BeforeTargets="Build" Condition="!Exists('$(MSBuildThisFileDirectory)node_modules')">
+    <Exec Command="npm install" WorkingDirectory="$(MSBuildThisFileDirectory)" />
+  </Target>
+
+  <Target Name="NpmBuild" AfterTargets="Build">
+    <Exec Command="npm run build" WorkingDirectory="$(MSBuildThisFileDirectory)" />
+  </Target>
+</Project>

@@ -10,9 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.WebHost.ConfigureKestrel(opt =>
     opt.Limits.MaxRequestBodySize = 500 * 1024 * 1024); // 500 MB
 
-var dbPath = Path.Combine(
-    Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
-    "klampiarske.db");
+var dbHome = Environment.GetEnvironmentVariable("HOME")
+    ?? Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+var dbPath = Path.Combine(dbHome, "klampiarske.db");
 
 builder.Services.AddDbContext<AppDbContext>(opt =>
     opt.UseSqlite($"Data Source={dbPath}"));

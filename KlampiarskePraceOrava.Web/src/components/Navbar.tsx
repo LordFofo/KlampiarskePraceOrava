@@ -8,6 +8,7 @@ export default function Navbar() {
 
   const links = [
     { to: '/', label: 'Úvod' },
+    { to: '/sluzby', label: 'Služby' },
     { to: '/realizacie', label: 'Realizácie' },
     { to: '/kontakt', label: 'Kontakt' },
   ]

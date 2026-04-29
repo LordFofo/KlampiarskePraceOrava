@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { Wrench } from 'lucide-react'
 import api, { type ProjectList, CATEGORIES } from '../services/api'
 
 export default function Projects() {
+  const [searchParams] = useSearchParams()
   const [projects, setProjects] = useState<ProjectList[]>([])
-  const [category, setCategory] = useState('')
+  const [category, setCategory] = useState(searchParams.get('kategoria') ?? '')
   const [loading, setLoading] = useState(true)
   const [selected, setSelected] = useState<ProjectList | null>(null)
 

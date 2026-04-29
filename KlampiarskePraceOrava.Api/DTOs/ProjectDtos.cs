@@ -19,3 +19,4 @@ public record ProjectVideoDto(int Id, string? Caption);
 
 public record CreateProjectDto(string Title, string? Description, string Category);
 public record UpdateProjectDto(string Title, string? Description, string Category, bool IsPublished);
+public record ImageOrderDto(int ImageId, int Order);

@@ -133,6 +133,18 @@ public class AdminProjectsController(AppDbContext db) : ControllerBase
         return NoContent();
     }
 
+    [HttpPut("{id}/images/reorder")]
+    public async Task<IActionResult> ReorderImages(int id, [FromBody] List<ImageOrderDto> orders)
+    {
+        foreach (var o in orders)
+        {
+            var img = await db.ProjectImages.FirstOrDefaultAsync(i => i.Id == o.ImageId && i.ProjectId == id);
+            if (img is not null) img.Order = o.Order;
+        }
+        await db.SaveChangesAsync();
+        return NoContent();
+    }
+
     [HttpPut("{id}/cover/{imageId}")]
     public async Task<IActionResult> SetCover(int id, int imageId)
     {

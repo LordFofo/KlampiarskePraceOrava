@@ -25,7 +25,7 @@ export default function Projects() {
         <button
           onClick={() => setCategory('')}
           className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-            category === '' ? 'bg-orange-500 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+            category === '' ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
           }`}
         >
           Všetky
@@ -35,7 +35,7 @@ export default function Projects() {
             key={c}
             onClick={() => setCategory(c)}
             className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-              category === c ? 'bg-orange-500 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              category === c ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
             }`}
           >
             {c}
@@ -67,7 +67,7 @@ export default function Projects() {
                 </div>
               )}
               <div className="p-4">
-                <span className="text-xs text-orange-500 font-medium uppercase tracking-wide">{p.category}</span>
+                <span className="text-xs text-blue-600 font-medium uppercase tracking-wide">{p.category}</span>
                 <h3 className="font-semibold text-gray-800 mt-1 text-lg">{p.title}</h3>
                 {(p.imageCount > 0 || p.videoCount > 0) && (
                   <p className="text-xs text-gray-400 mt-2">
@@ -158,7 +158,7 @@ function ProjectModal({ projectId, onClose }: { projectId: number; onClose: () =
           </div>
         )}
         <div className="p-6">
-          <span className="text-xs text-orange-500 font-medium uppercase tracking-wide">{detail.category}</span>
+          <span className="text-xs text-blue-600 font-medium uppercase tracking-wide">{detail.category}</span>
           <h2 className="text-2xl font-bold text-gray-800 mt-1 mb-3">{detail.title}</h2>
           {detail.description && <p className="text-gray-600 mb-4">{detail.description}</p>}
           {detail.videos.length > 0 && (

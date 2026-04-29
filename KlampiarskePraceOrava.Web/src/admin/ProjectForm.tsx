@@ -187,29 +187,29 @@ export default function ProjectForm() {
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">Názov *</label>
           <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required
-            className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400" />
+            className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">Popis</label>
           <textarea value={description} onChange={(e) => setDescription(e.target.value)} rows={4}
-            className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400 resize-none" />
+            className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none" />
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">Kategória</label>
           <select value={category} onChange={(e) => setCategory(e.target.value)}
-            className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400">
+            className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
             {CATEGORIES.map((c) => <option key={c}>{c}</option>)}
           </select>
         </div>
         {!isNew && (
           <label className="flex items-center gap-3 cursor-pointer">
-            <input type="checkbox" checked={isPublished} onChange={(e) => setIsPublished(e.target.checked)} className="w-4 h-4 accent-orange-500" />
+            <input type="checkbox" checked={isPublished} onChange={(e) => setIsPublished(e.target.checked)} className="w-4 h-4 accent-blue-600" />
             <span className="text-sm font-medium text-gray-700">Zverejniť projekt</span>
           </label>
         )}
         <div className="flex items-center gap-3">
           <button type="submit" disabled={saving || !hasChanges}
-            className="bg-orange-500 hover:bg-orange-600 disabled:opacity-40 disabled:cursor-not-allowed text-white font-semibold py-2.5 px-6 rounded-lg transition-colors">
+            className="bg-blue-600 hover:bg-blue-700 disabled:opacity-40 disabled:cursor-not-allowed text-white font-semibold py-2.5 px-6 rounded-lg transition-colors">
             {saving ? 'Ukladám...' : isNew ? 'Vytvoriť projekt' : 'Uložiť zmeny'}
           </button>
           {saved && (
@@ -227,7 +227,7 @@ export default function ProjectForm() {
             <div className="flex items-center justify-between mb-4">
               <div>
                 <h2 className="font-semibold text-gray-800 flex items-center gap-2">
-                  <ImageIcon size={18} className="text-orange-500" /> Obrázky
+                  <ImageIcon size={18} className="text-blue-600" /> Obrázky
                 </h2>
                 <p className="text-xs text-gray-400 mt-0.5">Ukladajú sa automaticky · Potiahnutím zmeníš poradie</p>
               </div>
@@ -246,7 +246,7 @@ export default function ProjectForm() {
                   <div key={i} className="relative">
                     <img src={url} className="w-full h-28 object-cover rounded-lg opacity-60" alt="" />
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <Loader2 size={24} className="animate-spin text-orange-500" />
+                      <Loader2 size={24} className="animate-spin text-blue-600" />
                     </div>
                   </div>
                 ))}
@@ -269,15 +269,15 @@ export default function ProjectForm() {
                     onDragOver={(e) => handleDragOver(e, index)}
                     onDragEnd={handleDragEnd}
                   >
-                    <img src={`/api/projects/images/${img.id}`} className={`w-full h-28 object-cover rounded-lg ${isCover ? 'ring-2 ring-orange-500' : ''}`} alt="" />
+                    <img src={`/api/projects/images/${img.id}`} className={`w-full h-28 object-cover rounded-lg ${isCover ? 'ring-2 ring-blue-600' : ''}`} alt="" />
                     {isCover && (
-                      <span className="absolute top-1 left-1 bg-orange-500 text-white text-xs font-medium px-1.5 py-0.5 rounded flex items-center gap-0.5">
+                      <span className="absolute top-1 left-1 bg-blue-600 text-white text-xs font-medium px-1.5 py-0.5 rounded flex items-center gap-0.5">
                         <Star size={10} fill="white" /> Cover
                       </span>
                     )}
                     {!isCover && (
                       <button title="Nastaviť ako cover" onClick={() => handleSetCover(img.id)}
-                        className="absolute top-1 left-1 bg-white/80 hover:bg-orange-500 hover:text-white text-gray-500 rounded-full p-1 opacity-0 group-hover:opacity-100 transition-all">
+                        className="absolute top-1 left-1 bg-white/80 hover:bg-blue-600 hover:text-white text-gray-500 rounded-full p-1 opacity-0 group-hover:opacity-100 transition-all">
                         <Star size={14} />
                       </button>
                     )}
@@ -296,7 +296,7 @@ export default function ProjectForm() {
             <div className="flex items-center justify-between mb-4">
               <div>
                 <h2 className="font-semibold text-gray-800 flex items-center gap-2">
-                  <Video size={18} className="text-orange-500" /> Videá
+                  <Video size={18} className="text-blue-600" /> Videá
                 </h2>
                 <p className="text-xs text-gray-400 mt-0.5">Ukladajú sa automaticky po výbere</p>
               </div>
@@ -308,7 +308,7 @@ export default function ProjectForm() {
               <input ref={vidRef} type="file" accept="video/*" className="hidden" onChange={handleUploadVideo} />
             </div>
             {uploadingVideo && (
-              <div className="flex items-center gap-2 text-orange-500 text-sm mb-3">
+              <div className="flex items-center gap-2 text-blue-600 text-sm mb-3">
                 <Loader2 size={16} className="animate-spin" /> Nahrávam video, prosím čakajte...
               </div>
             )}

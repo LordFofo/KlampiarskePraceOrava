@@ -12,7 +12,7 @@ export default function AdminLayout() {
     <Link
       to={to}
       className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-        pathname.startsWith(to) ? 'bg-orange-100 text-orange-600' : 'text-gray-600 hover:bg-gray-100'
+        pathname.startsWith(to) ? 'bg-blue-100 text-blue-600' : 'text-gray-600 hover:bg-gray-100'
       }`}
     >
       {icon} {label}
@@ -24,7 +24,7 @@ export default function AdminLayout() {
       {/* Sidebar */}
       <aside className="w-56 bg-white border-r flex flex-col">
         <div className="flex items-center gap-2 px-4 py-5 border-b">
-          <Hammer size={20} className="text-orange-500" />
+          <Hammer size={20} className="text-blue-600" />
           <span className="font-bold text-gray-800 text-sm">Admin panel</span>
         </div>
         <nav className="flex-1 p-3 flex flex-col gap-1">

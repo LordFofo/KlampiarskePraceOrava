@@ -16,14 +16,14 @@ export default function Contact() {
           {contacts.map((c) => (
             <div key={c.name} className="bg-gray-50 rounded-xl px-5 py-4 text-left">
               <div className="flex items-center gap-3 mb-2">
-                <div className="bg-orange-100 text-orange-500 rounded-full p-2">
+                <div className="bg-blue-100 text-blue-600 rounded-full p-2">
                   <User size={18} />
                 </div>
                 <span className="font-semibold text-gray-800">{c.name}</span>
               </div>
               <a
                 href={`tel:${c.phone.replace(/\s/g, '')}`}
-                className="flex items-center gap-2 text-orange-500 hover:text-orange-600 font-medium ml-11 transition-colors"
+                className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium ml-11 transition-colors"
               >
                 <Phone size={15} />
                 {c.phone}

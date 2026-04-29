@@ -17,7 +17,7 @@ function Footer() {
         <div className="grid sm:grid-cols-3 gap-8 mb-10">
           <div>
             <div className="flex items-center gap-2 text-white font-bold text-lg mb-3">
-              <Hammer size={20} className="text-orange-400" />
+              <Hammer size={20} className="text-blue-400" />
               Klampiarske práce Orava
             </div>
             <p className="text-sm text-gray-500">Odborné klampiarske práce v regióne Orava s dlhoročnou tradíciou.</p>
@@ -25,9 +25,9 @@ function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-3">Stránky</h4>
             <ul className="flex flex-col gap-2 text-sm">
-              <li><Link to="/" className="hover:text-orange-400 transition-colors">Úvod</Link></li>
-              <li><Link to="/projekty" className="hover:text-orange-400 transition-colors">Projekty</Link></li>
-              <li><Link to="/kontakt" className="hover:text-orange-400 transition-colors">Kontakt</Link></li>
+              <li><Link to="/" className="hover:text-blue-400 transition-colors">Úvod</Link></li>
+              <li><Link to="/projekty" className="hover:text-blue-400 transition-colors">Projekty</Link></li>
+              <li><Link to="/kontakt" className="hover:text-blue-400 transition-colors">Kontakt</Link></li>
             </ul>
           </div>
           <div>
@@ -36,7 +36,7 @@ function Footer() {
               href="https://www.facebook.com/groups/1478324683950260/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm bg-[#1877F2]/20 hover:bg-[#1877F2]/40 text-[#60a5fa] px-4 py-2 rounded-lg transition-colors"
+              className="inline-flex items-center gap-2 text-sm bg-[#1877F2]/20 hover:bg-[#1877F2]/40 text-blue-400 px-4 py-2 rounded-lg transition-colors"
             >
               <ExternalLink size={15} /> Facebook skupina
             </a>

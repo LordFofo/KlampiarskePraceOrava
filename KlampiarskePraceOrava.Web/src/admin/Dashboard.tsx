@@ -38,7 +38,7 @@ export default function Dashboard() {
         <h1 className="text-2xl font-bold text-gray-800">Projekty</h1>
         <button
           onClick={() => navigate('/admin/projekty/novy')}
-          className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-4 py-2 rounded-lg flex items-center gap-2 transition-colors"
+          className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-lg flex items-center gap-2 transition-colors"
         >
           <Plus size={18} /> Nový projekt
         </button>
@@ -80,7 +80,7 @@ export default function Dashboard() {
                       <button
                         title={p.isPublished ? 'Skryť' : 'Zverejniť'}
                         onClick={() => handleTogglePublish(p)}
-                        className="text-gray-400 hover:text-orange-500 transition-colors"
+                        className="text-gray-400 hover:text-blue-600 transition-colors"
                       >
                         {p.isPublished ? <EyeOff size={18} /> : <Eye size={18} />}
                       </button>

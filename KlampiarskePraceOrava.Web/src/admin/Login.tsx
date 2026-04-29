@@ -31,7 +31,7 @@ export default function Login() {
     <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
       <div className="bg-white rounded-2xl shadow-md p-8 w-full max-w-sm">
         <div className="flex flex-col items-center mb-8">
-          <div className="bg-orange-100 text-orange-500 rounded-full p-3 mb-3">
+          <div className="bg-blue-100 text-blue-600 rounded-full p-3 mb-3">
             <Hammer size={28} />
           </div>
           <h1 className="text-2xl font-bold text-gray-800">Admin</h1>
@@ -45,7 +45,7 @@ export default function Login() {
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
@@ -55,7 +55,7 @@ export default function Login() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
@@ -63,7 +63,7 @@ export default function Login() {
           <button
             type="submit"
             disabled={loading}
-            className="bg-orange-500 hover:bg-orange-600 disabled:opacity-50 text-white font-semibold py-2.5 rounded-lg transition-colors flex items-center justify-center gap-2"
+            className="bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white font-semibold py-2.5 rounded-lg transition-colors flex items-center justify-center gap-2"
           >
             <Lock size={16} />
             {loading ? 'Prihlasujem...' : 'Prihlásiť sa'}

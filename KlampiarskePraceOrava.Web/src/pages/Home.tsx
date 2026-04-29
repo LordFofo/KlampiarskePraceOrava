@@ -13,7 +13,7 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-50 to-transparent" />
         <div className="relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            Klampiarske práce <span className="text-orange-400">Orava</span>
+            Klampiarske práce <span className="text-blue-400">Orava</span>
           </h1>
           <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-8">
             Odborné pokrytie striech plechom a montáž strešných okien priamo z Oravy. Kvalita, na ktorú sa môžete spoľahnúť.
@@ -21,7 +21,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/projekty"
-              className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors flex items-center justify-center gap-2"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors flex items-center justify-center gap-2"
             >
               Naše projekty <ChevronRight size={18} />
             </Link>
@@ -41,7 +41,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Naše služby</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="flex gap-4 p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-              <div className="bg-orange-100 text-orange-500 rounded-lg p-3 h-fit">
+              <div className="bg-blue-100 text-blue-600 rounded-lg p-3 h-fit">
                 <HomeIcon size={28} />
               </div>
               <div>
@@ -52,7 +52,7 @@ export default function Home() {
               </div>
             </div>
             <div className="flex gap-4 p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-              <div className="bg-orange-100 text-orange-500 rounded-lg p-3 h-fit">
+              <div className="bg-blue-100 text-blue-600 rounded-lg p-3 h-fit">
                 <Eye size={28} />
               </div>
               <div>
@@ -63,7 +63,7 @@ export default function Home() {
               </div>
             </div>
             <div className="flex gap-4 p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-              <div className="bg-orange-100 text-orange-500 rounded-lg p-3 h-fit">
+              <div className="bg-blue-100 text-blue-600 rounded-lg p-3 h-fit">
                 <Flame size={28} />
               </div>
               <div>
@@ -78,12 +78,12 @@ export default function Home() {
       </section>
 
       {/* CTA banner */}
-      <section className="bg-orange-500 py-14 px-4 text-center text-white">
+      <section className="bg-blue-600 py-14 px-4 text-center text-white">
         <h2 className="text-3xl font-bold mb-3">Máte záujem o naše služby?</h2>
-        <p className="text-orange-100 mb-8 text-lg">Kontaktujte nás a dohodneme sa na termíne obhliadky.</p>
+        <p className="text-blue-100 mb-8 text-lg">Kontaktujte nás a dohodneme sa na termíne obhliadky.</p>
         <Link
           to="/kontakt"
-          className="inline-flex items-center gap-2 bg-white text-orange-500 font-semibold px-8 py-3 rounded-lg hover:bg-orange-50 transition-colors"
+          className="inline-flex items-center gap-2 bg-white text-blue-600 font-semibold px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors"
         >
           Kontaktujte nás <ChevronRight size={18} />
         </Link>

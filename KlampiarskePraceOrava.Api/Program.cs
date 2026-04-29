@@ -10,8 +10,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.WebHost.ConfigureKestrel(opt =>
     opt.Limits.MaxRequestBodySize = 500 * 1024 * 1024); // 500 MB
 
+var dbPath = Path.Combine(
+    Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
+    "klampiarske.db");
+
 builder.Services.AddDbContext<AppDbContext>(opt =>
-    opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+    opt.UseSqlite($"Data Source={dbPath}"));
 
 var jwtKey = builder.Configuration["Jwt:Key"]!;
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

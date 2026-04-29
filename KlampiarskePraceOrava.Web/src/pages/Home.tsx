@@ -6,11 +6,11 @@ export default function Home() {
     <div>
       {/* Hero */}
       <section
-        className="relative text-white py-28 px-4 text-center bg-gray-900"
-        style={{ backgroundImage: 'url(/uvod.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+        className="relative text-white min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 text-center bg-gray-900"
+        style={{ backgroundImage: 'url(/uvod.jpg)', backgroundSize: 'cover', backgroundPosition: 'center top' }}
       >
-        <div className="absolute inset-0 bg-black/55" />
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-50 to-transparent" />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent" />
         <div className="relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
             Klampiarske práce <span className="text-blue-400">Orava</span>

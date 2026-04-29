@@ -1,7 +1,7 @@
 import { ExternalLink, Phone, User } from 'lucide-react'
 
 const contacts = [
-  { name: 'Tomáš Babčeka', phone: '+421 948 383 532' },
+  { name: 'Tomáš Babečka', phone: '+421 948 383 532' },
   { name: 'Peter Romaňák', phone: '+421 907 656 735' },
 ]
 

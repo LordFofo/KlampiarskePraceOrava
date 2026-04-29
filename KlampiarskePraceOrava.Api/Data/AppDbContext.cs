@@ -9,6 +9,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
     public DbSet<ProjectImage> ProjectImages => Set<ProjectImage>();
     public DbSet<ProjectVideo> ProjectVideos => Set<ProjectVideo>();
     public DbSet<ContactInquiry> ContactInquiries => Set<ContactInquiry>();
+    public DbSet<Review> Reviews => Set<Review>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -39,6 +40,13 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
             e.HasKey(i => i.Id);
             e.Property(i => i.Name).IsRequired().HasMaxLength(100);
             e.Property(i => i.Phone).IsRequired().HasMaxLength(30);
+        });
+
+        modelBuilder.Entity<Review>(e =>
+        {
+            e.HasKey(r => r.Id);
+            e.Property(r => r.Name).IsRequired().HasMaxLength(100);
+            e.Property(r => r.Text).IsRequired().HasMaxLength(1000);
         });
     }
 }

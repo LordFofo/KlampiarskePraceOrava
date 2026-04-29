@@ -10,6 +10,7 @@ export default function Navbar() {
     { to: '/', label: 'Úvod' },
     { to: '/sluzby', label: 'Služby' },
     { to: '/realizacie', label: 'Realizácie' },
+    { to: '/recenzie', label: 'Recenzie' },
     { to: '/kontakt', label: 'Kontakt' },
   ]
 

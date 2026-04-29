@@ -11,6 +11,8 @@ import Dashboard from './admin/Dashboard'
 import ProjectForm from './admin/ProjectForm'
 import Inquiries from './admin/Inquiries'
 import Services from './pages/Services'
+import Reviews from './pages/Reviews'
+import AdminReviews from './admin/Reviews'
 
 function Footer() {
   return (
@@ -30,6 +32,7 @@ function Footer() {
               <li><Link to="/" className="hover:text-blue-400 transition-colors">Úvod</Link></li>
               <li><Link to="/sluzby" className="hover:text-blue-400 transition-colors">Služby</Link></li>
               <li><Link to="/realizacie" className="hover:text-blue-400 transition-colors">Realizácie</Link></li>
+              <li><Link to="/recenzie" className="hover:text-blue-400 transition-colors">Recenzie</Link></li>
               <li><Link to="/kontakt" className="hover:text-blue-400 transition-colors">Kontakt</Link></li>
             </ul>
           </div>
@@ -72,6 +75,7 @@ export default function App() {
           <Route path="/" element={<PublicLayout><Home /></PublicLayout>} />
           <Route path="/sluzby" element={<PublicLayout><Services /></PublicLayout>} />
           <Route path="/realizacie" element={<PublicLayout><Projects /></PublicLayout>} />
+          <Route path="/recenzie" element={<PublicLayout><Reviews /></PublicLayout>} />
           <Route path="/projekty" element={<Navigate to="/realizacie" replace />} />
           <Route path="/kontakt" element={<PublicLayout><Contact /></PublicLayout>} />
 
@@ -79,7 +83,8 @@ export default function App() {
           <Route path="/admin" element={<Login />} />
           <Route path="/admin" element={<AdminLayout />}>
             <Route path="dashboard" element={<Dashboard />} />
-            <Route path="dopyty" element={<Inquiries />} />
+            <Route path="ponuky" element={<Inquiries />} />
+            <Route path="recenzie" element={<AdminReviews />} />
             <Route path="projekty/novy" element={<ProjectForm />} />
             <Route path="projekty/:id" element={<ProjectForm />} />
           </Route>

@@ -30,7 +30,7 @@ export default function Inquiries() {
   }
 
   const handleDelete = async (id: number) => {
-    if (!confirm('Naozaj zmazať tento dopyt?')) return
+    if (!confirm('Naozaj zmazať túto ponuku?')) return
     await api.delete(`/admin/inquiries/${id}`)
     load()
   }
@@ -40,7 +40,7 @@ export default function Inquiries() {
   return (
     <div className="p-8">
       <div className="flex items-center gap-3 mb-6">
-        <h1 className="text-2xl font-bold text-gray-800">Dopyty</h1>
+        <h1 className="text-2xl font-bold text-gray-800">Ponuky</h1>
         {unreadCount > 0 && (
           <span className="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded-full">
             {unreadCount} nové
@@ -51,7 +51,7 @@ export default function Inquiries() {
       {loading ? (
         <div className="text-gray-400 py-12 text-center">Načítavam...</div>
       ) : inquiries.length === 0 ? (
-        <div className="text-gray-400 py-12 text-center">Zatiaľ žiadne dopyty.</div>
+        <div className="text-gray-400 py-12 text-center">Zatiaľ žiadne ponuky.</div>
       ) : (
         <div className="flex flex-col gap-3">
           {inquiries.map((i) => (

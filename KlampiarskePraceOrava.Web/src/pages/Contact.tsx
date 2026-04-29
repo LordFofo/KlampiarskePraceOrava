@@ -32,7 +32,7 @@ export default function Contact() {
     <div className="bg-gray-50 px-4 py-16">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold text-gray-800 mb-2 text-center">Kontakt</h1>
-        <p className="text-gray-500 mb-10 text-center">Zavolajte nám alebo pošlite nezáväznú dopyt.</p>
+        <p className="text-gray-500 mb-10 text-center">Zavolajte nám alebo pošlite nezáväznú ponuku.</p>
 
         <div className="grid md:grid-cols-2 gap-8">
 
@@ -77,18 +77,18 @@ export default function Contact() {
 
           {/* Formulár */}
           <div className="bg-white rounded-2xl shadow-sm p-6">
-            <h2 className="font-semibold text-gray-800 mb-4">Nezáväzná dopyt</h2>
+            <h2 className="font-semibold text-gray-800 mb-4">Nezáväzná ponuka</h2>
 
             {sent ? (
               <div className="flex flex-col items-center justify-center gap-3 py-10 text-green-600">
                 <CheckCircle size={48} />
-                <p className="font-semibold text-lg">Dopyt bol odoslaný!</p>
+                <p className="font-semibold text-lg">Ponuka bola odoslaná!</p>
                 <p className="text-gray-500 text-sm text-center">Ozveme sa vám čo najskôr.</p>
                 <button
                   onClick={() => setSent(false)}
                   className="mt-2 text-sm text-blue-600 hover:underline"
                 >
-                  Odoslať ďalší dopyt
+                  Odoslať ďalšiu ponuku
                 </button>
               </div>
             ) : (
@@ -131,7 +131,7 @@ export default function Contact() {
                   className="bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white font-semibold py-3 rounded-lg transition-colors flex items-center justify-center gap-2"
                 >
                   <Send size={16} />
-                  {sending ? 'Odosielam...' : 'Odoslať dopyt'}
+                  {sending ? 'Odosielam...' : 'Odoslať ponuku'}
                 </button>
               </form>
             )}

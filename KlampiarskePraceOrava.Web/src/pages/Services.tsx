@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
-import { Home as HomeIcon, Eye, Flame, ChevronRight } from 'lucide-react'
+import { ChevronRight } from 'lucide-react'
 
 const services = [
   {
-    icon: <HomeIcon size={36} />,
+    image: '/sluzba-strecha.jpg',
     title: 'Pokrytie strechy',
     category: 'Pokrytie strechy',
     description: [
@@ -13,7 +13,7 @@ const services = [
     ],
   },
   {
-    icon: <Eye size={36} />,
+    image: '/sluzba-okno.jpg',
     title: 'Strešné okná',
     category: 'Strešné okná',
     description: [
@@ -23,7 +23,7 @@ const services = [
     ],
   },
   {
-    icon: <Flame size={36} />,
+    image: '/sluzba-komin.jpg',
     title: 'Oplechovanie komína',
     category: 'Oplechovanie komína',
     description: [
@@ -48,24 +48,27 @@ export default function Services() {
       {/* Služby */}
       <div className="max-w-4xl mx-auto px-4 py-12 flex flex-col gap-8">
         {services.map((s) => (
-          <div key={s.title} className="bg-white rounded-2xl shadow-sm p-8">
-            <div className="flex items-center gap-4 mb-5">
-              <div className="bg-blue-100 text-blue-600 rounded-xl p-3">
-                {s.icon}
+          <div key={s.title} className="bg-white rounded-2xl shadow-sm overflow-hidden">
+            <img
+              src={s.image}
+              alt={s.title}
+              className="w-full h-64 object-cover"
+              loading="lazy"
+            />
+            <div className="p-8">
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">{s.title}</h2>
+              <div className="flex flex-col gap-3 text-gray-600 leading-relaxed mb-6">
+                {s.description.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
               </div>
-              <h2 className="text-2xl font-bold text-gray-800">{s.title}</h2>
+              <Link
+                to={`/realizacie?kategoria=${encodeURIComponent(s.category)}`}
+                className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium text-sm transition-colors"
+              >
+                Pozrieť realizácie <ChevronRight size={16} />
+              </Link>
             </div>
-            <div className="flex flex-col gap-3 text-gray-600 leading-relaxed mb-6">
-              {s.description.map((p, i) => (
-                <p key={i}>{p}</p>
-              ))}
-            </div>
-            <Link
-              to={`/realizacie?kategoria=${encodeURIComponent(s.category)}`}
-              className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium text-sm transition-colors"
-            >
-              Pozrieť realizácie <ChevronRight size={16} />
-            </Link>
           </div>
         ))}
       </div>

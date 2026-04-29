@@ -1,6 +1,6 @@
 import { Navigate, Outlet, Link, useLocation } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
-import { Hammer, FolderOpen, LogOut } from 'lucide-react'
+import { Hammer, FolderOpen, LogOut, MessageSquare } from 'lucide-react'
 
 export default function AdminLayout() {
   const { isAuthenticated, logout } = useAuth()
@@ -29,6 +29,7 @@ export default function AdminLayout() {
         </div>
         <nav className="flex-1 p-3 flex flex-col gap-1">
           {navLink('/admin/dashboard', 'Projekty', <FolderOpen size={16} />)}
+          {navLink('/admin/dopyty', 'Dopyty', <MessageSquare size={16} />)}
         </nav>
         <div className="p-3 border-t">
           <button

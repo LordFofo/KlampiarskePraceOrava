@@ -9,6 +9,7 @@ import Login from './admin/Login'
 import AdminLayout from './admin/AdminLayout'
 import Dashboard from './admin/Dashboard'
 import ProjectForm from './admin/ProjectForm'
+import Inquiries from './admin/Inquiries'
 
 function Footer() {
   return (
@@ -75,6 +76,7 @@ export default function App() {
           <Route path="/admin" element={<Login />} />
           <Route path="/admin" element={<AdminLayout />}>
             <Route path="dashboard" element={<Dashboard />} />
+            <Route path="dopyty" element={<Inquiries />} />
             <Route path="projekty/novy" element={<ProjectForm />} />
             <Route path="projekty/:id" element={<ProjectForm />} />
           </Route>

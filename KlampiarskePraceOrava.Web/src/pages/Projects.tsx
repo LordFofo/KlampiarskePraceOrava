@@ -18,7 +18,7 @@ export default function Projects() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold text-gray-800 mb-8">Naše projekty</h1>
+      <h1 className="text-3xl font-bold text-gray-800 mb-8">Naše realizácie</h1>
 
       {/* Filter */}
       <div className="flex flex-wrap gap-2 mb-8">

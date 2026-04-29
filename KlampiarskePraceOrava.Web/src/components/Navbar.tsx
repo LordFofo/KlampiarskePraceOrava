@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, Hammer } from 'lucide-react'
+import { Menu, X, Hammer, Phone } from 'lucide-react'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -8,7 +8,7 @@ export default function Navbar() {
 
   const links = [
     { to: '/', label: 'Úvod' },
-    { to: '/projekty', label: 'Projekty' },
+    { to: '/realizacie', label: 'Realizácie' },
     { to: '/kontakt', label: 'Kontakt' },
   ]
 
@@ -24,12 +24,19 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop */}
-        <div className="hidden md:flex gap-8">
+        <div className="hidden md:flex items-center gap-8">
           {links.map((l) => (
             <Link key={l.to} to={l.to} className={`transition-colors ${active(l.to)}`}>
               {l.label}
             </Link>
           ))}
+          <a
+            href="tel:+421907656735"
+            className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
+          >
+            <Phone size={15} />
+            +421 907 656 735
+          </a>
         </div>
 
         {/* Mobile toggle */}
@@ -46,6 +53,14 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
+          <a
+            href="tel:+421907656735"
+            className="flex items-center gap-2 text-blue-600 font-semibold text-sm"
+            onClick={() => setOpen(false)}
+          >
+            <Phone size={15} />
+            +421 907 656 735
+          </a>
         </div>
       )}
     </nav>

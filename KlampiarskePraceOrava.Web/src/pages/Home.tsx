@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ChevronRight, Home as HomeIcon, Eye, Flame } from 'lucide-react'
+import { ChevronRight, Home as HomeIcon, Eye, Flame, Phone } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -20,16 +20,16 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              to="/projekty"
+              to="/realizacie"
               className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors flex items-center justify-center gap-2"
             >
-              Naše projekty <ChevronRight size={18} />
+              Naše realizácie <ChevronRight size={18} />
             </Link>
             <Link
               to="/kontakt"
-              className="border border-gray-400 hover:border-white text-white px-6 py-3 rounded-lg transition-colors"
+              className="border border-gray-400 hover:border-white text-white font-semibold px-6 py-3 rounded-lg transition-colors flex items-center justify-center gap-2"
             >
-              Kontaktujte nás
+              <Phone size={16} /> Bezplatná obhliadka
             </Link>
           </div>
         </div>
@@ -79,8 +79,8 @@ export default function Home() {
 
       {/* CTA banner */}
       <section className="bg-blue-600 py-14 px-4 text-center text-white">
-        <h2 className="text-3xl font-bold mb-3">Máte záujem o naše služby?</h2>
-        <p className="text-blue-100 mb-8 text-lg">Kontaktujte nás a dohodneme sa na termíne obhliadky.</p>
+        <h2 className="text-3xl font-bold mb-3">Záujem o bezplatnú obhliadku?</h2>
+        <p className="text-blue-100 mb-8 text-lg">Prídeme sa pozrieť, poradíme a pripravíme cenovú ponuku — zadarmo.</p>
         <Link
           to="/kontakt"
           className="inline-flex items-center gap-2 bg-white text-blue-600 font-semibold px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors"

@@ -26,7 +26,7 @@ function Footer() {
             <h4 className="text-white font-semibold mb-3">Stránky</h4>
             <ul className="flex flex-col gap-2 text-sm">
               <li><Link to="/" className="hover:text-blue-400 transition-colors">Úvod</Link></li>
-              <li><Link to="/projekty" className="hover:text-blue-400 transition-colors">Projekty</Link></li>
+              <li><Link to="/realizacie" className="hover:text-blue-400 transition-colors">Realizácie</Link></li>
               <li><Link to="/kontakt" className="hover:text-blue-400 transition-colors">Kontakt</Link></li>
             </ul>
           </div>
@@ -67,7 +67,8 @@ export default function App() {
         <Routes>
           {/* Public */}
           <Route path="/" element={<PublicLayout><Home /></PublicLayout>} />
-          <Route path="/projekty" element={<PublicLayout><Projects /></PublicLayout>} />
+          <Route path="/realizacie" element={<PublicLayout><Projects /></PublicLayout>} />
+          <Route path="/projekty" element={<Navigate to="/realizacie" replace />} />
           <Route path="/kontakt" element={<PublicLayout><Contact /></PublicLayout>} />
 
           {/* Admin */}

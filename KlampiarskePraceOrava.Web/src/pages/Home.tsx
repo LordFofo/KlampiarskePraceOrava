@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ChevronRight, Home as HomeIcon, Eye, Flame, ShieldCheck, Clock, MapPin } from 'lucide-react'
+import { ChevronRight, Home as HomeIcon, Eye, Flame } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -31,36 +31,6 @@ export default function Home() {
             >
               Kontaktujte nás
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Prečo nás? */}
-      <section className="py-14 px-4 bg-gray-50">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">Prečo nás?</h2>
-          <div className="grid sm:grid-cols-3 gap-6">
-            <div className="bg-white rounded-2xl shadow-sm p-8 flex flex-col items-center text-center gap-3">
-              <div className="bg-orange-100 text-orange-500 rounded-full p-4">
-                <Clock size={30} />
-              </div>
-              <div className="text-4xl font-bold text-gray-800">10+</div>
-              <p className="text-gray-500 text-sm font-medium">Rokov skúseností v odbore</p>
-            </div>
-            <div className="bg-white rounded-2xl shadow-sm p-8 flex flex-col items-center text-center gap-3">
-              <div className="bg-orange-100 text-orange-500 rounded-full p-4">
-                <ShieldCheck size={30} />
-              </div>
-              <div className="text-4xl font-bold text-gray-800">100+</div>
-              <p className="text-gray-500 text-sm font-medium">Úspešne zrealizovaných projektov</p>
-            </div>
-            <div className="bg-white rounded-2xl shadow-sm p-8 flex flex-col items-center text-center gap-3">
-              <div className="bg-orange-100 text-orange-500 rounded-full p-4">
-                <MapPin size={30} />
-              </div>
-              <div className="text-4xl font-bold text-gray-800">Orava</div>
-              <p className="text-gray-500 text-sm font-medium">Lokálni odborníci z regiónu</p>
-            </div>
           </div>
         </div>
       </section>

@@ -42,22 +42,22 @@ export default function Navbar() {
         </div>
 
         {/* Mobile toggle */}
-        <button className="md:hidden text-gray-600" onClick={() => setOpen(!open)}>
+        <button className="md:hidden text-gray-600 p-2 -mr-2" onClick={() => setOpen(!open)} aria-label="Menu">
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-white border-t px-4 py-3 flex flex-col gap-3">
+        <div className="md:hidden bg-white border-t px-4 py-1 flex flex-col">
           {links.map((l) => (
-            <Link key={l.to} to={l.to} className={`transition-colors ${active(l.to)}`} onClick={() => setOpen(false)}>
+            <Link key={l.to} to={l.to} className={`py-3 transition-colors ${active(l.to)}`} onClick={() => setOpen(false)}>
               {l.label}
             </Link>
           ))}
           <a
             href="tel:+421907656735"
-            className="flex items-center gap-2 text-blue-600 font-semibold text-sm"
+            className="flex items-center gap-2 text-blue-600 font-semibold text-sm py-3 border-t mt-1"
             onClick={() => setOpen(false)}
           >
             <Phone size={15} />

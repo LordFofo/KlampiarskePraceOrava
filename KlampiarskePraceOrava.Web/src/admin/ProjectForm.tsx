@@ -174,7 +174,7 @@ export default function ProjectForm() {
   }
 
   return (
-    <div className="p-8 max-w-3xl">
+    <div className="p-4 md:p-8 max-w-3xl">
       <button onClick={() => navigate('/admin/dashboard')} className="flex items-center gap-2 text-gray-500 hover:text-gray-700 mb-6 text-sm">
         <ArrowLeft size={16} /> Späť na zoznam
       </button>
@@ -241,7 +241,7 @@ export default function ProjectForm() {
 
             {/* Náhľady pred uploadom */}
             {imagePreviews.length > 0 && (
-              <div className="grid grid-cols-3 gap-3 mb-3">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-3">
                 {imagePreviews.map((url, i) => (
                   <div key={i} className="relative">
                     <img src={url} className="w-full h-28 object-cover rounded-lg opacity-60" alt="" />
@@ -257,7 +257,7 @@ export default function ProjectForm() {
               <p className="text-gray-400 text-sm">Zatiaľ žiadne obrázky.</p>
             )}
 
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {localImages.map((img, index) => {
                 const isCover = detail?.coverImageId === img.id
                 return (

@@ -153,7 +153,7 @@ function ProjectModal({ projectId, onClose }: { projectId: number; onClose: () =
                     <button
                       key={i}
                       onClick={() => setImgIndex(i)}
-                      className={`w-2 h-2 rounded-full transition-colors ${i === imgIndex ? 'bg-white' : 'bg-white/50'}`}
+                      className={`w-3 h-3 rounded-full transition-colors ${i === imgIndex ? 'bg-white' : 'bg-white/50'}`}
                     />
                   ))}
                 </div>

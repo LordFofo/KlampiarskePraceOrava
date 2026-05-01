@@ -55,7 +55,7 @@ export default function Services() {
               className="w-full h-64 object-cover"
               loading="lazy"
             />
-            <div className="p-8">
+            <div className="p-5 md:p-8">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">{s.title}</h2>
               <div className="flex flex-col gap-3 text-gray-600 leading-relaxed mb-6">
                 {s.description.map((p, i) => (

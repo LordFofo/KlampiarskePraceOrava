@@ -33,14 +33,14 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="p-8">
+    <div className="p-4 md:p-8">
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-gray-800">Projekty</h1>
+        <h1 className="text-xl md:text-2xl font-bold text-gray-800">Projekty</h1>
         <button
           onClick={() => navigate('/admin/projekty/novy')}
-          className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-lg flex items-center gap-2 transition-colors"
+          className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-3 py-2 md:px-4 rounded-lg flex items-center gap-2 transition-colors text-sm md:text-base"
         >
-          <Plus size={18} /> Nový projekt
+          <Plus size={18} /> <span className="hidden sm:inline">Nový projekt</span><span className="sm:hidden">Nový</span>
         </button>
       </div>
 
@@ -50,6 +50,7 @@ export default function Dashboard() {
         <div className="text-gray-400 py-12 text-center">Zatiaľ žiadne projekty.</div>
       ) : (
         <div className="bg-white rounded-xl shadow-sm overflow-hidden">
+          <div className="overflow-x-auto">
           <table className="w-full">
             <thead className="bg-gray-50 text-xs text-gray-500 uppercase tracking-wide">
               <tr>
@@ -104,6 +105,7 @@ export default function Dashboard() {
               ))}
             </tbody>
           </table>
+          </div>
         </div>
       )}
     </div>

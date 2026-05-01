@@ -38,7 +38,7 @@ export default function Inquiries() {
   const unreadCount = inquiries.filter((i) => !i.isRead).length
 
   return (
-    <div className="p-8">
+    <div className="p-4 md:p-8">
       <div className="flex items-center gap-3 mb-6">
         <h1 className="text-2xl font-bold text-gray-800">Ponuky</h1>
         {unreadCount > 0 && (

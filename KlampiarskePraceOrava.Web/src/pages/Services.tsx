@@ -6,31 +6,22 @@ const services = [
     image: '/sluzba-strecha.jpg',
     title: 'Pokrytie strechy',
     category: 'Pokrytie strechy',
-    description: [
-      'Strecha je najdôležitejšia ochrana vášho domu pred poveternostnými vplyvmi. Poskytujeme komplexné služby v oblasti pokrytia striech plechovou krytinou — od montáže novej strechy, cez opravu poškodených úsekov, až po kompletnú rekonštrukciu.',
-      'Pracujeme so stojatou drážkou (falcovaný plech), trapézovými plechmi aj profilovými krytinami. Každá realizácia zahŕňa správne oplechovanie hrebeňa, úžľabí a okrajov strechy pre maximálnu odolnosť voči vode.',
-      'Po dokončení prác odveziete odpad a pracovisko zanecháme v čistote.'
-    ],
+    description:
+      'Komplexné pokrytie striech plechovou krytinou — od montáže novej strechy, cez opravu poškodených úsekov, až po kompletnú rekonštrukciu. Pracujeme so stojatou drážkou (falcovaný plech), trapézovými plechmi aj profilovými krytinami vrátane správneho oplechovania hrebeňa, úžľabí a okrajov strechy.',
   },
   {
     image: '/sluzba-okno.jpg',
     title: 'Strešné okná',
     category: 'Strešné okná',
-    description: [
-      'Správna montáž strešného okna je kľúčová pre dlhodobú funkčnosť a zamedzenie zatekania. Zabezpečíme odborné zabudovanie strešných okien vrátane kompletného oplechovania okolia.',
-      'Oplechovanie zahŕňa lemovanie okna, odvodnenie a tesnenie napojenia na krytinu. Používame kvalitné materiály odolné voči UV žiareniu a mrazu, ktoré udržia tesnosť po celú dobu životnosti okna.',
-      'Realizujeme montáž okien Velux, Fakro, Roto a ďalších výrobcov.'
-    ],
+    description:
+      'Odborná montáž strešných okien vrátane kompletného oplechovania okolia — lemovanie okna, odvodnenie a tesnenie napojenia na krytinu. Používame kvalitné materiály odolné voči UV žiareniu a mrazu. Realizujeme montáž okien Velux, Fakro, Roto a ďalších výrobcov.',
   },
   {
     image: '/sluzba-komin.jpg',
     title: 'Oplechovanie komína',
     category: 'Oplechovanie komína',
-    description: [
-      'Komín je jedno z najčastejších miest, kde dochádza k zatekaniu vody do strechy. Príčinou je väčšinou poškodené alebo nesprávne vyhotovené oplechovanie. Vykonávame nové oplechovanie komínov aj opravu existujúceho.',
-      'Oplechovanie riešime pomocou tvaroviek z pozinkovaného alebo titánzinkového plechu, ktoré dokonale kopírujú tvar komína a napojenie na krytinu. Súčasťou je aj správne odvedenie vody od komína pomocou žľabového oplechovania.',
-      'Po práci skontrolujeme tesnosť celého napojenia a odstraňujeme príčiny, nie len príznaky zatekania.'
-    ],
+    description:
+      'Nové oplechovanie komínov aj oprava existujúceho pomocou tvaroviek z pozinkovaného alebo titánzinkového plechu. Dokonale kopírujeme tvar komína a napojenie na krytinu vrátane žľabového odvedenia vody. Po práci skontrolujeme tesnosť celého napojenia.',
   },
 ]
 
@@ -45,26 +36,30 @@ export default function Services() {
         </p>
       </div>
 
-      {/* Služby */}
-      <div className="max-w-4xl mx-auto px-4 py-12 flex flex-col gap-8">
-        {services.map((s) => (
-          <div key={s.title} className="bg-white rounded-2xl shadow-sm overflow-hidden">
-            <img
-              src={s.image}
-              alt={s.title}
-              className="w-full h-64 object-cover"
-              loading="lazy"
-            />
-            <div className="p-5 md:p-8">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">{s.title}</h2>
-              <div className="flex flex-col gap-3 text-gray-600 leading-relaxed mb-6">
-                {s.description.map((p, i) => (
-                  <p key={i}>{p}</p>
-                ))}
-              </div>
+      {/* Alternating sections */}
+      <div className="max-w-5xl mx-auto px-4 py-12 flex flex-col gap-8">
+        {services.map((s, i) => (
+          <div
+            key={s.title}
+            className="flex flex-col md:flex-row bg-white rounded-2xl shadow-sm overflow-hidden"
+          >
+            {/* Obrázok — na mobile vždy hore, na desktop sa strieda pozícia */}
+            <div className={`md:w-1/2 shrink-0 ${i % 2 === 1 ? 'md:order-2' : ''}`}>
+              <img
+                src={s.image}
+                alt={s.title}
+                className="w-full h-56 md:h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+
+            {/* Text */}
+            <div className={`md:w-1/2 p-6 md:p-10 flex flex-col justify-center gap-4 ${i % 2 === 1 ? 'md:order-1' : ''}`}>
+              <h2 className="text-2xl font-bold text-gray-800">{s.title}</h2>
+              <p className="text-gray-600 leading-relaxed">{s.description}</p>
               <Link
                 to={`/realizacie?kategoria=${encodeURIComponent(s.category)}`}
-                className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium text-sm transition-colors"
+                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors self-start text-sm"
               >
                 Pozrieť realizácie <ChevronRight size={16} />
               </Link>
